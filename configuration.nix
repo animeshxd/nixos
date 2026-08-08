@@ -93,6 +93,9 @@
   systemd.services.docker.enable = false;
   systemd.user.services.docker.enable = false;
 
+  virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.package = pkgs.waydroid-nftables;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
