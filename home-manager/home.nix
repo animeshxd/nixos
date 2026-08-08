@@ -39,10 +39,10 @@ in
   home.username = "user";
   home.homeDirectory = "/home/user";
   home.stateVersion = "26.05";
-  
+
   fonts.fontconfig.enable = true;
 
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
     gcr
     polkit_gnome
     nerd-fonts.jetbrains-mono
@@ -72,7 +72,7 @@ in
   };
   xdg.portal = {
     enable = true;
-    extraPortals = [ 
+    extraPortals = [
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-hyprland
     ];
@@ -110,7 +110,7 @@ in
     platformTheme.name = "gtk3";
     style.name = "gtk3";
   };
-  xdg.enable = true;  
+  xdg.enable = true;
   xdg.configFile."hypr/bin".source = pkgs.runCommand "hypr-bin" {
     nativeBuildInputs = [ pkgs.stdenvNoCC ];
   } ''
@@ -124,7 +124,7 @@ in
   xdg.configFile."dunstrc".source = ../dots/archlinux/.config/dunstrc;
   xdg.configFile."Thunar".source = ../dots/archlinux/.config/Thunar;
   xdg.configFile."waybar".source = waybar;
-  home.file."${config.xdg.userDirs.pictures}/.keep".text = "";
+  home.file."${config.xdg.userDirs.pictures}/Screenshots/.keep".text = "";
 
   services.gnome-keyring.enable = true;
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
@@ -149,4 +149,3 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
-
