@@ -69,6 +69,7 @@ in
     dconf
     kdePackages.breeze-icons
     discord
+    zed-editor
   ];
   programs.waybar.enable = true;
   programs.git = {
@@ -123,6 +124,7 @@ in
   xdg.configFile."wofi".source = ../dots/archlinux/.config/wofi;
   xdg.configFile."dunstrc".source = ../dots/archlinux/.config/dunstrc;
   xdg.configFile."Thunar".source = ../dots/archlinux/.config/Thunar;
+  xdg.configFile."zed".source = ../dots/archlinux/.config/zed;
   xdg.configFile."waybar".source = waybar;
   home.file."${config.xdg.userDirs.pictures}/Screenshots/.keep".text = "";
 
