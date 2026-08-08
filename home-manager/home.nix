@@ -63,6 +63,7 @@ in
     htop
     dconf
     kdePackages.breeze-icons
+    discord
   ];
   programs.waybar.enable = true;
   programs.git = {
