@@ -71,6 +71,7 @@ in
     kdePackages.breeze-icons
     discord
     zed-editor
+    gimp
   ];
   programs.waybar.enable = true;
   programs.git = {
