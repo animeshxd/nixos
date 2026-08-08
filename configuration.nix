@@ -30,6 +30,7 @@
     networkConfig.DHCP = "yes";
     linkConfig.RequiredForOnline = "no";
   };
+  networking.firewall.enable = false;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -114,4 +115,3 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
 }
-
