@@ -113,13 +113,7 @@ in
     style.name = "gtk3";
   };
   xdg.enable = true;
-  xdg.configFile."hypr/bin".source = pkgs.runCommand "hypr-bin" {
-    nativeBuildInputs = [ pkgs.stdenvNoCC ];
-  } ''
-    cp -r ${../dots/archlinux/.config/hypr/bin} $out
-    chmod -R +w $out
-    patchShebangs $out
-  '';
+  xdg.configFile."hypr/bin".source = ../dots/archlinux/.config/hypr/bin;
   xdg.configFile."alacritty".source = ../dots/archlinux/.config/alacritty;
   xdg.configFile."nvim".source = ../dots/archlinux/.config/nvim;
   xdg.configFile."wofi".source = ../dots/archlinux/.config/wofi;
