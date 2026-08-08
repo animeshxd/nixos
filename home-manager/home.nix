@@ -67,6 +67,7 @@ in
     dunst
     htop
     dconf
+    xdg-utils
     kdePackages.breeze-icons
     discord
     zed-editor
