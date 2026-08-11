@@ -79,6 +79,24 @@ in
     settings.user.name = "Animesh Murmu";
     settings.user.email = "am2646374@gmail.com";
   };
+
+  programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+    bash = {
+      enable = true;
+      initExtra = ''
+        direnv_indicator() {
+          [ -n "$DIRENV_DIR" ] && printf '\033[0;33m[󱐋]\033[0m'
+        }
+        PS1="''${PS1#\\n}"
+        PS1='\[$(direnv_indicator)\]'"$PS1"
+      '';
+    };
+  };
   xdg.portal = {
     enable = true;
     extraPortals = [
@@ -86,6 +104,13 @@ in
       pkgs.xdg-desktop-portal-hyprland
     ];
   };
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ "Alacritty.desktop" ];
+    };
+  };
+
 
   wayland.windowManager.hyprland = {
     enable = true;
